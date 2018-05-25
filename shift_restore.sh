@@ -33,7 +33,8 @@ DB_PASS="$(grep "password" $SHIFT_CONFIG | cut -f 4 -d '"' | head -1)"
 load_snapshot(){
   echo "Prepare for loading snapshot from server (http://snapshot.shiftnrg.info)"
 
-
+rm main_*.tar -f
+rm test_*.tar -f
 
 if [ $DB_NAME == "shift_db" ]; then
    files=$(curl -s 'http://snapshot.shiftnrg.info/listfiles.php?type=main')
@@ -86,9 +87,6 @@ echo " "
 			    echo "OK snapshot restored successfully."
 			  fi
 		   bash ~/shift/shift_manager.bash start
-		   # Delete blockchain
-                   rm -f $i
-                   echo "Download deleted"
                    echo "Finished"
 		fi
   		((nr++))   
