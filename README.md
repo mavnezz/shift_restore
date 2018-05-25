@@ -1,6 +1,8 @@
 # shift_restore
 Download snapshot from http://snapshot.shiftnrg.info and restore shift blockchain
 
+Please be sure you deactivated your crontab for shift-checker
+
 
 cd ~
 
