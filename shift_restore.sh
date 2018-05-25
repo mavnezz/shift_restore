@@ -70,7 +70,8 @@ echo " "
 	for i in "${tarfile[@]}"
 	do
  		if [ $REPLY -eq $nr ]; then
-		   wget -q "http://snapshot.shiftnrg.info/$i"	
+		   #wget -q "http://snapshot.shiftnrg.info/$i"	
+		   wget -O $i "http://snapshot.shiftnrg.info/$i"	
 	  	   echo "Loading done"
 		   bash ~/shift/shift_manager.bash stop
 		   # restore snapshop
