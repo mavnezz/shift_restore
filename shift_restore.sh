@@ -87,6 +87,8 @@ echo " "
 			  else
 			    echo "OK snapshot restored successfully."
 			  fi
+		   rm main_*.tar -f
+		   rm test_*.tar -f			  
 		   bash ~/shift/shift_manager.bash start
                    echo "Finished"
 		fi
